@@ -64,7 +64,7 @@ for n = 1:length(h1)
     end
     I = (da<thresAmp1)&(db<thresPha1);
     c1 = length(Pout1);
-    Pout1((c1+1):(c1+sum(I)),:) = [h(n) param1(I,:) da(I) db(I)];
+    Pout1((c1+1):(c1+sum(I)),:) = [h1(n)*ones(sum(I),1) param1(I,:) da(I) db(I)];
 end
 save Well1_result Pout1
 %%
